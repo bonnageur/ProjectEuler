@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+"""
+Project Euler Problem 1 in Python3
+If we list all the natural numbers below a given number that are multiples
+of 3 or 5, we get the following sequences: 3, 5, 6, 9, 10, 12, 15, 18, 20,
+21, ... and so on.
+Find the sum of all the multiples of 3 or 5 below 1000.
+"""
+
+# Calculating the sum of all the multiples of 3 or 5 below 1000
+
+def sum_of_multiples(n):
+    sum = 0
+    for i in range(n):
+        if i % 3 == 0 or i % 5 == 0:
+            sum = i + sum
+    return sum
+
+n = 1000
+result = sum_of_multiples(n)
+print("The sum of all the multiples of 3 or 5 below", n, "is", result)
