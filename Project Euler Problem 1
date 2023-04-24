@@ -1,0 +1,22 @@
+// Project Euler Problem 1 in Rust
+// compiled and run in rustc 1.68.2 (9eb3afe9e 2023-03-27)
+// run $ cargo new foo
+// run $ cargo run
+
+fn main_of_multiples(n: u32) -> u32 {
+
+    let mut sum = 0;
+    for i in 0..n {
+        if i % 3 == 0 || i % 5 == 0 {
+            sum = i + sum
+        }
+    }
+    sum
+}
+
+fn main() {
+    println!("Hello, world!");
+    let n = 1000;
+    let result = sum_of_multiples(n);
+    println!("The sum of all multiples of 3 or 5 below {} is {}", n, result);
+}
