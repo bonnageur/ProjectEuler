@@ -1,0 +1,29 @@
+// Project Euler Problem 2 Sum of even valued Fibonacci sequences
+
+// Tested in gcc 12.2.0
+
+
+#include <stdio.h>
+
+int fibonacci_sum(int limit) {
+    int sum = 0;
+    int a = 1;
+    int b = 2;
+    int next;
+    while (a < limit) {
+        if (a % 2 == 0) {
+            sum += a;
+        }
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    return sum;
+}
+
+int main() {
+    int limit = 4000000;
+    int result = fibonacci_sum(limit);
+printf("The sum of even-valued Fibonacci sequences below %d is: %d\n", limit, result);
+    return 0;
+}
