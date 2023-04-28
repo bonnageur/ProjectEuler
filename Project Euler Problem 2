@@ -1,0 +1,20 @@
+function euler2()
+    limit = 4_000_000
+    a = 1
+    b = 2
+    next = 0
+    sum = 0
+
+    while a < limit
+        if iseven(a)     # checking the even number
+            sum += a
+        end
+        next = a + b
+        a = b
+        b = next
+    end
+
+    println("The sum of even-valued Fibonacci sequences below $limit is: $sum")
+end
+
+euler2()
