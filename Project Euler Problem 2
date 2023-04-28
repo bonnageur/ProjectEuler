@@ -1,0 +1,20 @@
+program euler2
+    implicit none
+    integer, parameter :: limit = 4000000
+    integer :: a, b, next, sum
+    a = 1
+    b = 2
+    next = 0
+    sum = 0
+
+    do while (a < limit)
+        if (mod(a, 2) == 0) then
+            sum = sum + a
+        end if
+        next = a + b
+        a = b
+        b = next
+    end do
+
+    print *, "The sum of even-valued Fibonacci sequences below", limit, "is ", sum
+end program euler2
