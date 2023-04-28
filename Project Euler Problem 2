@@ -1,0 +1,24 @@
+func fibonacciSequence(limit: Int) -> [Int] {
+    var sequence = [1, 2]
+    var next = 0
+    while next <= limit {
+        next = sequence[sequence.count - 1] + sequence[sequence.count - 2]
+        if next <= limit {
+            sequence.append(next)
+        }
+    }
+    return sequence
+}
+
+func sumEvenFibonacciNumbers(limit: Int) -> Int {
+    let sequence = fibonacciSequence(limit: limit)
+    var sum = 0
+    for number in sequence {
+        if number % 2 == 0 {
+            sum += number
+        }
+    }
+    return sum
+}
+
+print(sumEvenFibonacciNumbers(limit: 4000000))
